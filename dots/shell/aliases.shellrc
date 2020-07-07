@@ -1,0 +1,4 @@
+alias cfg='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias la='ls -a'
+alias la='ls -FA'
+alias la='ls -lsA'
