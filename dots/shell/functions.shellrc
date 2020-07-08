@@ -1,0 +1,13 @@
+c() {
+	if [-z "$1" ] ; then
+		clear
+	elif [ -d "$1" ] ; then
+		cd "$1"
+	else 
+		cat "$1" || cd "$1"
+	fi	
+}
+
+mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
+mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
+cpcd() { mv -iv "$1" "$2" && cd "$1" ; }
