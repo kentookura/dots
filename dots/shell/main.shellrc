@@ -1,7 +1,12 @@
 set -o vi
 set -o trackall
 
-PS1_STYLE=pwd
-PS1_GIT=true
-. ~/dots/shell/aliases.shellrc
+PS1_STYLE=user-pwd
+PS1_GIT=false
 . ~/dots/shell/prompt.shellrc
+. ~/dots/shell/aliases.shellrc
+. ~/dots/shell/functions.shellrc
+
+export PS1="$(_ps1_print)"
+
+. ~/dots/shell/prompt.sh
