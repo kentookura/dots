@@ -1,5 +1,6 @@
 set -o vi
 set -o trackall
+set -o bgnice
 
 . ~/dots/shell/prompt.shellrc
 . ~/dots/shell/aliases.shellrc

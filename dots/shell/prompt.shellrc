@@ -13,7 +13,7 @@ _ps1_print_pwd() {
 	pth="$(echo $PWD | sed 's,/home/kento,~,')"
 	local IFS='/'
 	for d in $pth; do
-		pthstr="${pthstr}$(echo $d | grep -oh ^[a-zA-Z0-9~]);"
+		pthstr="${pthstr}$(echo $d | grep -Eo '^\.[a-zA-Z0-9~]|^[a-zA-Z0-9~]');"
 	done
 	unset IFS
 	pthstr=$(echo $pthstr | sed 's,;,/,g')
