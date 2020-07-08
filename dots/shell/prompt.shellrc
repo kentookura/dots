@@ -9,53 +9,24 @@ _ps1_print_user() {
 }
 
 _ps1_print_pwd() {
-	printf '%s' "\[\e[1;36m\]\W "
-}
-
-_ps1_print_path() {
-	local ps
-	pth="$(pwd | sed 's,/home/kento,~,')"
+	local pthstr
+	pth="$(echo $PWD | sed 's,/home/kento,~,')"
 	local IFS='/'
 	for d in $pth; do
-		ps="${ps}$(echo $d | grep -oh ^[a-zA-Z0-9~]);"
+		pthstr="${pthstr}$(echo $d | grep -oh ^[a-zA-Z0-9~]);"
 	done
-	unset $IFS
-	ps=$(echo $ps | sed 's,;,/,g')
-	printf '%s ' "$ps"
-}
-
-_ps1_print_git() {
-	# print git repo name in parenthesis, if we're inside one
-	set -f
-	set +f -- $(git rev-parse --symbolic-full-name --abbrev-ref HEAD 2>/dev/null)
-	[ "$1" ] && printf '(%s) ' "$1"
+	unset IFS
+	pthstr=$(echo $pthstr | sed 's,;,/,g')
+	printf '%s ' $pthstr
 }
 
 _ps1_print() {
 	case $TERM in
 		*-256color)
-			case ${PS1_STYLE:-user-pwd} in
-				user-pwd)
-					_ps1_print_user
-					printf ' '
-					_ps1_print_path
-					printf '> '
-					;;
-				user)
-					_ps1_print_user
-					printf '> '
-					;;
-				pwd)
-					_ps1_print_path
-					printf '> '
-					;;
-				percent)
-					echo '%'
-			esac
-
-			if [ "${PS1_GIT:-false}" = true ] && [ -d .git ] ; then
-				_ps1_print_git
-			fi
+			_ps1_print_user
+			printf ' '
+			_ps1_print_pwd
+			printf '> '
 
 			# clear formatting
 			printf '%s' '\[\e[1;37m\]'
@@ -67,7 +38,6 @@ _ps1_print() {
 			printf '%s %s' "$USER" "${PWD##*/}"
 	esac
 
-	# add space after calculating the prompt
-	export PS1="$PS1 "
 }
-
+cd .
+PS1='$(_ps1_print)'
