@@ -5,3 +5,7 @@
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 ENV="$HOME/dots/shell/main.shellrc"
 export PATH HOME TERM ENV
+
+export EDITOR=vim
+export WM=dwm
+export PF_INFO="ascii os kernel shell editor wm pkgs memory palette"

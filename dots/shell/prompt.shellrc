@@ -26,7 +26,7 @@ _ps1_print() {
 			_ps1_print_user
 			printf ' '
 			_ps1_print_pwd
-			printf '> '
+			printf '%s' '\[\e[1;35m\]> '
 
 			# clear formatting
 			printf '%s' '\[\e[1;37m\]'
@@ -39,5 +39,5 @@ _ps1_print() {
 	esac
 
 }
-cd .
 PS1='$(_ps1_print)'
+cd .
