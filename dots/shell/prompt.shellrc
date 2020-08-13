@@ -26,7 +26,6 @@ _ps1_print() {
 			_ps1_print_user
 			printf ' '
 			_ps1_print_pwd
-			printf '%s' '\[\e[1;35m\]> '
 
 			# clear formatting
 			printf '%s' '\[\e[1;37m\]'

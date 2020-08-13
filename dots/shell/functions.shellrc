@@ -8,6 +8,10 @@ c() {
 	fi	
 }
 
+wcon() {
+	doas ifconfig iwm0 nwid $1 wpakey $2 && doas dhclient iwm0
+}
+
 mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
 mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
 cpcd() { mv -iv "$1" "$2" && cd "$1" ; }

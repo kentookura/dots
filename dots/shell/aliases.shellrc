@@ -1,4 +1,8 @@
-alias cfg='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias {config,cfg}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+
+alias wiki='vim wiki/index.wiki'
+
+alias cfv='vim ~/.vimrc'
 
 alias la='ls -a'
 alias {ll,lll}='ls -l'
