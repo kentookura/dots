@@ -1,0 +1,54 @@
+alias {config,cfg}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias v='vim'
+alias bm='. ~/bin/bm'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias u="ultralist"
+alias pretty="python3 -m json.tool"
+
+alias cfv='vim ~/.vimrc'
+alias cfh='vim ~/.config/sxhkd/sxhkdrc'
+alias cfr='vim ~/.config/ranger'
+alias fs='vim ~/.config/shell/functions.shellrc'
+alias als='vim ~/.config/shell/aliases.shellrc'
+
+alias wiki='vim ~/wiki/index.md'
+
+alias la='ls -a'
+alias {ll,lll}='ls -l'
+alias {lla,lal}='ls -al'
+alias lsf='ls "$PWD"/*'
+alias lg='ls | grep -i'
+
+alias cp='cp -irv'
+alias mv='mv -iv'
+alias mkdir='mkdir -p'
+
+alias {:q,:wq,q}=exit
+alias {cls,csl,cl,lc}='clear ; ls'
+alias {e,ech,eho}=echo
+alias {g,gi,gr,gre,grep,Grep,gerp,grpe}='grep'
+alias {pg,pgrpe}=pgrep
+alias ga='grep -i -A 6'
+alias ga1='grep -i -A 1'
+
+alias df='df -h'
+alias h='head -n 15'
+alias t='tail -n 15'
+alias h1='head -n 1'
+alias t1='tail -n 1'
+alias tf='tail -f'
+
+alias cmd=command
+alias w=which
+
+alias dm='dmesg | tail -n 20'
+alias dmg='dmesg | grep -i'
+
+alias u='ultralist'
+
+alias {poweroff,shutdown}='doas poweroff'
+alias {reboot,restart}='doas reboot'

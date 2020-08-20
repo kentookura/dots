@@ -1,0 +1,57 @@
+c() {
+	if [ -z "$1" ] ; then
+		clear
+	elif [ -d "$1" ] ; then
+		cd "$1"
+	else 
+		cat "$1" || cd "$1"
+	fi	
+}
+
+cf(){
+	cd $(find ${1:-~} -type d -print 2> /dev/null | fzf +m)
+}
+
+cdp(){
+	local file
+	local dir
+	file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+zth(){
+	cd $HOME/doc
+	file=$(ls . | fzf)
+	tabbed > zth.xid
+	xid=$(cat zth.xid)
+	zathura -e $xid $file
+}
+
+wcon() {
+	doas ifconfig iwm0 nwid $1 wpakey $2 && doas dhclient iwm0
+}
+
+edit() {
+	if [ -d $1  ]; then
+		cd $1
+		sg s
+	fi
+}
+
+glone(){
+	git clone https://github.com/$1
+}
+
+mock(){
+	awk 'BEGIN {srand()} {
+		j = rand() >  .5
+		n = split($0, a, "")
+		for(i=0; i<=n; i++)
+			out = out ((j = ++j %2)? tolower(a[i]): toupper(a[i]))
+		print out; out = ""
+		}'
+}
+
+
+mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
+mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
+cpcd() { mv -iv "$1" "$2" && cd "$1" ; }

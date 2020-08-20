@@ -2,6 +2,8 @@ super + Return
 	st
 super + d
 	dmenu_run
+super + w
+	firefox
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -11,10 +13,16 @@ super + Escape
 #	|  _  ||  |  |  |        |
 #	|_____||________|__|__|__|
 
+super + shift + c
+	dwmc killclient
+
+super + shift + q
+	dwmc quit
+
 super + {j, k}
 	dwmc focusstack {+, -}1
 
-super + Shift + {j, k}
+super + shift + {j, k}
 	dwmc movestack {+, -}1
 
 super + {l, h}
@@ -23,26 +31,28 @@ super + {l, h}
 super + {i, u}
 	dwmc setcfact {+, -}0.25
 
-super + Shift + {h, l}
+super + shift + {h, l}
 	dwmc incnmaster {+, -}1
 
 super + Tab
 	dwmc view
-super + Shift + Return
+
+super + shift + Return
 	dwmc zoom
 
 super + b
 	dwmc togglebar
+super + 0
+	dwmc viewall
+
+super + {t, space, f, z, x, c, v}
+	dwmc setlayoutex {0, 1, 2, 3, 4, 5, 6}
 
 super + {1, 2, 3, 4, 5, 6, 7, 8, 9}
 	dwmc viewex {0, 1, 2, 3, 4, 5, 6, 7, 8}
 
-super + Alt + {1, 2, 3, 4, 5, 6, 7, 8, 9}
+super + alt + {1, 2, 3, 4, 5, 6, 7, 8, 9}
 	dwmc toggleviewex {0, 1, 2, 3, 4, 5, 6, 7, 8}
 
 super + Shift +{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	dwmc tagex {0, 1, 2, 3, 4, 5, 6, 7, 8}
-
-super + {1, 2, 3, 4, 5, 6, 7, 8, 9}
-	viewex {0, 1, 2, 3, 4, 5, 6, 7, 8}
-
