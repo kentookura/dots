@@ -30,10 +30,11 @@
 .sndio
 .src/
 .ssh/
+.surf/
 .thunderbird/
 .todos.json
 .vim/
-.viminfo/
+.viminfo
 .xsession-errors
 bin/
 dl/

@@ -1,9 +1,20 @@
 super + Return 
 	st
+
 super + d
 	dmenu_run
+
 super + w
-	firefox
+	brows firefox
+
+super + shift + w
+	brows surf
+
+super + r
+	st -e ranger
+
+#super + o
+	#sg
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -40,8 +51,12 @@ super + Tab
 super + shift + Return
 	dwmc zoom
 
+super + shift + space
+	dwmc togglefloating
+
 super + b
 	dwmc togglebar
+
 super + 0
 	dwmc viewall
 
@@ -54,5 +69,5 @@ super + {1, 2, 3, 4, 5, 6, 7, 8, 9}
 super + alt + {1, 2, 3, 4, 5, 6, 7, 8, 9}
 	dwmc toggleviewex {0, 1, 2, 3, 4, 5, 6, 7, 8}
 
-super + Shift +{1, 2, 3, 4, 5, 6, 7, 8, 9}
+super + shift + {1, 2, 3, 4, 5, 6, 7, 8, 9}
 	dwmc tagex {0, 1, 2, 3, 4, 5, 6, 7, 8}

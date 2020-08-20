@@ -1,4 +1,4 @@
-alias {config,cfg}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias {config,cnf}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias v='vim'
 alias bm='. ~/bin/bm'
 
