@@ -2,11 +2,14 @@ alias {config,cnf}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias v='vim'
 alias bm='. ~/bin/bm'
 
+alias source='. ~/.config/shell/main.shellrc'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias u="ultralist"
+alias ul="ultralist list"
+
 alias pretty="python3 -m json.tool"
 
 alias cfv='vim ~/.vimrc'
