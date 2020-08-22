@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 		let g:vimwiki_list = [{'path': '~/wiki/',
 					\ 'syntax': 'markdown', 'ext': '.md'}]
 	Plug 'jiangmiao/auto-pairs'
+	Plug 'neovimhaskell/haskell-vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'scrooloose/nerdtree'
 	Plug 'chrisbra/Colorizer'
@@ -78,6 +79,8 @@ autocmd VimLeave *.tex !texclear %
 autocmd BufNewFile,BufRead *.hs set expandtab
 autocmd FileType json setlocal ts=2 sts=2 sw=2
 autocmd FileType html setlocal ts=2 sts=2 sw=2
+autocmd FileType haskell setlocal ts=2 sts=2 sw=2
+autocmd FileType markdown setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.config set syntax=sh
 autocmd BufNewFile,BufRead *.conf set syntax=sh

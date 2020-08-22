@@ -48,3 +48,6 @@ site/
 st/
 surf/
 wiki/
+.pm2/
+node_modules/
+package-lock.json
