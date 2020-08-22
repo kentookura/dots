@@ -1,3 +1,7 @@
+mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
+mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
+cpcd() { mv -iv "$1" "$2" && cd "$1" ; }
+
 c() {
 	if [ -z "$1" ] ; then
 		clear
@@ -21,9 +25,22 @@ cdp(){
 zth(){
 	cd $HOME/doc
 	file=$(ls . | fzf)
-	tabbed > zth.xid
 	xid=$(cat zth.xid)
-	zathura -e $xid $file
+	if [ -z "$(xwininfo -root -children | grep zathura-tabs)" ]; then
+		echo no  tabbed instance
+		tabbed -dn zathura-tabs -s > zth.xid &
+	fi
+	zathura $file -e "$xid" &
+}
+
+srf(){
+	if [ $1 = *@*.md ]; then
+		lowdown $file -o ~/tmp/mdfile.html
+		surf ~/tmp/mdfile.html &
+	else
+		file=$(fzf +m -q "$1")
+		surf "$file" &
+	fi
 }
 
 wcon() {
@@ -51,7 +68,3 @@ mock(){
 		}'
 }
 
-
-mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
-mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
-cpcd() { mv -iv "$1" "$2" && cd "$1" ; }
