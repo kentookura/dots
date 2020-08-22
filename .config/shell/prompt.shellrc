@@ -10,14 +10,18 @@ _ps1_print_user() {
 
 _ps1_print_pwd() {
 	local pthstr
-	pth="$(echo $PWD | sed 's,/home/kento,~,')"
-	local IFS='/'
-	for d in $pth; do
-		pthstr="${pthstr}$(echo $d | grep -Eo '^\.[a-zA-Z0-9~]|^[a-zA-Z0-9~]');"
-	done
-	unset IFS
-	pthstr=$(echo $pthstr | sed 's,;,/,g')
-	printf '%s ' $pthstr
+	if [ $PWD = "/" ]; then
+		printf '%s ' $PWD
+	else
+		pth="$(echo $PWD | sed 's,/home/kento,~,')"
+		local IFS='/'
+		for d in $pth; do
+			pthstr="${pthstr}$(echo $d | grep -Eo '^\.[a-zA-Z0-9~]|^[a-zA-Z0-9~]');"
+		done
+		unset IFS
+		pthstr=$(echo $pthstr | sed 's,;,/,g')
+		printf '%s ' $pthstr
+	fi
 }
 
 _ps1_print() {
