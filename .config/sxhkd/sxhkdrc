@@ -48,8 +48,8 @@ super + {i, u}
 super + shift + {h, l}
 	dwmc incnmaster {+, -}1
 
-super + Tab
-	dwmc view
+#super + Tab
+	#dwmc view
 
 super + shift + Return
 	dwmc zoom
@@ -65,4 +65,3 @@ super + 0
 
 super + {t, space, f, z, x, c, v}
 	dwmc setlayoutex {0, 1, 2, 3, 4, 5, 6}
-
