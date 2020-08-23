@@ -2,7 +2,7 @@ alias {config,cnf}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias v='vim'
 alias bm='. ~/bin/bm'
 
-alias source='. ~/.config/shell/main.shellrc'
+alias source='. ~/.config/shell/main.shellrc && . ~/.profile'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -17,6 +17,7 @@ alias cfh='vim ~/.config/sxhkd/sxhkdrc'
 alias cfr='vim ~/.config/ranger'
 alias fs='vim ~/.config/shell/functions.shellrc'
 alias als='vim ~/.config/shell/aliases.shellrc'
+alias profile='vim ~/.profile'
 
 alias wiki='vim ~/wiki/index.md'
 
