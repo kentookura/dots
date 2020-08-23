@@ -15,13 +15,47 @@ call plug#begin('~/.vim/plugged')
 		let g:vimwiki_list = [{'path': '~/wiki/',
 					\ 'syntax': 'markdown', 'ext': '.md'}]
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'neovimhaskell/haskell-vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'scrooloose/nerdtree'
 	Plug 'chrisbra/Colorizer'
 	Plug 'vim-airline/vim-airline'
 	Plug 'rhysd/vim-healthcheck'
 	Plug 'tpope/vim-surround'
+	
+"        __                 __           __ __ 
+" 	|  |--.---.-.-----.|  |--.-----.|  |  |
+" 	|     |  _  |__ --||    <|  -__||  |  |
+" 	|__|__|___._|_____||__|__|_____||__|__|
+                                       
+	Plug 'eagletmt/ghcmod-vim'
+	Plug 'eagletmt/neco-ghc'
+	Plug 'eagletmt/ghcmod-vim'
+	Plug 'eagletmt/neco'
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'scrooloose/syntastic'
+	Plug 'tomtom/tlib_vim'
+	Plug 'MarcWeber/vim-addon-mw-utils'
+	Plug 'garbas/vim-snipmate'
+	Plug 'scrooloose/nerdcommenter'
+	Plug 'godlygeek/tabular'
+	Plug 'ervandew/supertab'
+	Plug 'Shougo/neocomplete.vim'
+"	Plug 'neovimhaskell/haskell-vim'
+"		let g:haskell_enable_quantification = 1
+"		let g:haskell_enable_recurxivedo = 1
+"		let g:haskell_enable_arrowxyntax = 1
+"		let g:haskell_enable_pattern_synonyms = 1
+"		let g:haskell_enable_typeroles = 1
+"		let g:haskell_enable_staic_pointers = 1
+"		let g:haskell_indent_if = 3
+"		let g:haskell_indent_case=2
+"		let g:haskell_indent_let = 4
+"		let g:haskell_indent_where = 6
+"		let g:haskell_indent_before_where = 2
+"		let g:haskell_indent_after_bare_where = 2
+"		let g:haskell_indent_do = 3
+"		let g:haskell_indent_in = 1
+"		let g:haskell_indent_guard = 2
 call plug#end()
 
 "----------------------basics-----------------------------
@@ -76,10 +110,10 @@ autocmd VimLeave *.tex !texclear %
 
 "----------------------------------syntax----------------------------------
 
-autocmd BufNewFile,BufRead *.hs set expandtab
+autocmd Filetype haskell setlocal expandtab
+autocmd FileType json setlocal sw=2
 autocmd FileType json setlocal ts=2 sts=2 sw=2
 autocmd FileType html setlocal ts=2 sts=2 sw=2
-autocmd FileType haskell setlocal ts=2 sts=2 sw=2
 autocmd FileType markdown setlocal ts=2 sts=2 sw=2
 
 autocmd BufNewFile,BufRead *.config set syntax=sh
