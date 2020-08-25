@@ -11,6 +11,12 @@ call plug#begin('~/.vim/plugged')
 		let g:goyo_height = 100
 	Plug 'junegunn/fzf', { 'do': {->fzf#install() } }
 	Plug 'junegunn/fzf.vim'
+	Plug 'itchyny/lightline.vim'
+		let g:lightline = {
+			\ 'colorscheme': 'seoul256',
+			\ 'separator': { 'left': '▓▒░', 'right': '░▒▓'  },
+			\ 'subseparator': { 'left': '▒', 'right': '░'  }
+			\ }
 	Plug 'vimwiki/vimwiki'
 		let g:vimwiki_list = [{'path': '~/wiki/',
 					\ 'syntax': 'markdown', 'ext': '.md'}]
@@ -18,7 +24,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'scrooloose/nerdtree'
 	Plug 'chrisbra/Colorizer'
-	Plug 'vim-airline/vim-airline'
 	Plug 'rhysd/vim-healthcheck'
 	Plug 'tpope/vim-surround'
 	
@@ -28,8 +33,6 @@ call plug#begin('~/.vim/plugged')
 " 	|__|__|___._|_____||__|__|_____||__|__|
                                        
 	"Plug 'eagletmt/ghcmod-vim'
-	Plug 'eagletmt/neco-ghc'
-	Plug 'eagletmt/neco'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'scrooloose/syntastic'
 	Plug 'tomtom/tlib_vim'
@@ -63,6 +66,7 @@ colo desert
 filetype indent plugin on
 let mapleader = ","
 set autoread
+set laststatus=2
 set clipboard=unnamed
 set encoding=utf-8
 set fileencoding=utf-8
