@@ -27,9 +27,8 @@ call plug#begin('~/.vim/plugged')
 " 	|     |  _  |__ --||    <|  -__||  |  |
 " 	|__|__|___._|_____||__|__|_____||__|__|
                                        
-	Plug 'eagletmt/ghcmod-vim'
+	"Plug 'eagletmt/ghcmod-vim'
 	Plug 'eagletmt/neco-ghc'
-	Plug 'eagletmt/ghcmod-vim'
 	Plug 'eagletmt/neco'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'scrooloose/syntastic'
