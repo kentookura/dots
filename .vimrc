@@ -113,7 +113,7 @@ autocmd VimLeave *.tex !texclear %
 
 "----------------------------------syntax----------------------------------
 
-autocmd Filetype haskell setlocal expandtab
+autocmd FileType haskell setlocal expandtab ts=2 sts=2 sw=2
 autocmd FileType json setlocal sw=2
 autocmd FileType json setlocal ts=2 sts=2 sw=2
 autocmd FileType html setlocal ts=2 sts=2 sw=2

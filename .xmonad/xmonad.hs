@@ -1,6 +1,5 @@
 import XMonad
-import XMonad.Layout.Tabbed
-import XMonad.Layout.Accordion
+import XMonad.Hooks.ManageHelpers
 import Data.Monoid
 import System.Exit
 
@@ -12,9 +11,10 @@ import qualified Data.Map        as M
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [
       ((modm .|. shiftMask, xK_c     ), kill)
+
     , ((modm,               xK_Tab   ), sendMessage NextLayout)
     , ((modm,               xK_t     ), setLayout $ XMonad.layoutHook conf)
-    , ((modm,               xK_n     ), refresh)
+
     , ((modm,               xK_j     ), windows W.focusDown)
     , ((modm,               xK_k     ), windows W.focusUp  )
     , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
@@ -25,6 +25,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_space ), withFocused $ windows . W.sink)
     , ((modm .|. shiftMask, xK_h     ), sendMessage (IncMasterN 1))
     , ((modm .|. shiftMask, xK_l     ), sendMessage (IncMasterN (-1)))
+    , ((modm,               xK_n     ), refresh)
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     ]
@@ -84,6 +85,7 @@ defaults = def {
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
+--isDialog --> doF W.shiftMaster <+> doF W.swapDown,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook

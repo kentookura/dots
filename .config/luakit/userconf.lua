@@ -11,6 +11,6 @@ modes.remap_binds("normal", {
 	})
 
 settings.window.search_engines = {
-	default		= "https://searx.okura.at/search?q=%s", 
+	default		= "https://duckduckgo.com/?q=%s", 
 	y		= "https://invidio.us/search?q=%s"
 }

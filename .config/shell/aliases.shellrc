@@ -15,6 +15,7 @@ alias pretty="python3 -m json.tool"
 alias cfv='vim ~/.vimrc'
 alias cfh='vim ~/.config/sxhkd/sxhkdrc'
 alias cfr='vim ~/.config/ranger'
+alias cfm='cd ~/.xmonad/src; vim ~/.xmonad/xmonad.hs'
 alias fs='vim ~/.config/shell/functions.shellrc'
 alias als='vim ~/.config/shell/aliases.shellrc'
 alias profile='vim ~/.profile'
