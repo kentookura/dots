@@ -7,10 +7,13 @@
 "-----------------------plugins----------------------------
 
 call plug#begin('~/.vim/plugged')
+	Plug 'tpope/vim-surround'
 	Plug 'junegunn/goyo.vim'
 		let g:goyo_height = 100
 	Plug 'junegunn/fzf', { 'do': {->fzf#install() } }
 	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/limelight.vim'
+		let g:limelight_conceal_ctermfg = 'gray'
 	Plug 'itchyny/lightline.vim'
 		let g:lightline = {
 			\ 'colorscheme': 'seoul256',
@@ -25,7 +28,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'chrisbra/Colorizer'
 	Plug 'rhysd/vim-healthcheck'
-	Plug 'tpope/vim-surround'
 	
 "        __                 __           __ __ 
 " 	|  |--.---.-.-----.|  |--.-----.|  |  |

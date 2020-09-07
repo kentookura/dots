@@ -1,5 +1,5 @@
 super + Return 
-	st
+	st -f "DejaVu Sans Mono"
 
 super + d
 	dmenu_run
@@ -47,9 +47,6 @@ super + {i, u}
 
 super + shift + {h, l}
 	dwmc incnmaster {+, -}1
-
-#super + Tab
-	#dwmc view
 
 super + shift + Return
 	dwmc zoom
