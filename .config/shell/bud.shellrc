@@ -1,40 +1,12 @@
 #!/usr/bin/env/bash
 
-_ps1_print_user() {
-	code=1
-	printf '%s\n' "$USER" | fold -w 1 | \
-	while read -r c ; do
-		printf '%s' "\[\e[1;3${code}m\]$c"
-		code=$(( code + 1 ))
-	done
-	printf '%s' "\[\e[1;3$(( ${#USER} + 1 ))m\]"
-}
-rainbow() {
-	code=1
-	printf '%s\n' "$1" | fold -w 1 | \
-	while read -r c ; do
-		printf '%s' "$(tput setaf ${code})$c"
-		code=$(( (code + 1)%8 ))
-	done
-	printf '\n'
-}
-
 prompt_generator() {
+
   local ps # pathstring
   local ms # timestring (milliseconds or seconds)
   local tc # timecolor
-  
-  if [ "$EXIT" != 0 ]; then
-    C_EXIT="${C_RED}>"
-  else
-    C_EXIT="${C_BLUE}>"
-  fi
-  #PS1=${C_EXIT} 
 
-  #PS1="\$(if [ \$? == 0 ]; then echo \${C_GREEN}\>; else echo \${C_RED}\>; fi) "
-
-
-  ms=$(( ($(prompt_timestamp) - ${_t_prompt:-}) / 1000000  ))
+  ms=$(( ($(prompt_timestamp) - ${_t_prompt:-}) / 1000000 ))
 
   # different foreground color for the time
   # depending on the execution time.
@@ -43,8 +15,7 @@ prompt_generator() {
     ms <= 100  ? 2 :
     ms <= 250  ? 3 :
     ms <= 500  ? 4 :
-    ms <= 999  ? 5 : 6
-	 )) in
+    ms <= 999  ? 5 : 6)) in
       (1)   tc="${C_GREEN}"   ;;
       (2)   tc="${C_YELLOW}"  ;;
       (3)   tc="${C_CYAN}"    ;;
@@ -61,7 +32,7 @@ prompt_generator() {
 
   # if the current directory has changed since the
   # last prompt, generate a new ps.
-  if [[ $_last_promptdir = "$PWD"  ]]; then
+  if [[ $_last_promptdir = "$PWD" ]]; then
     ps="$_last_pathstring"
   else
     # set IFS to forward slash to conveniently
@@ -74,18 +45,17 @@ prompt_generator() {
     # character OR the first character of each
     # directory.
     for d in ${PWD/~/'~'}; do
-      [[ $d =~ [[:alnum:]]  ]]         \
+      [[ $d =~ [[:alnum:]] ]]         \
         && ps+="${BASH_REMATCH[0]}/"  \
         || ps+="${d:0:1}/"   
     done
 
     # remove trailing / if we are not in root dir
-    [[ ${ps} = /  ]] || {
+    [[ ${ps} = / ]] || {
       ps="${ps%/}"
 
       # expand the last directory
-       [[ $ps != '~'  ]] && ps="${ps%/*}/$d"
-    
+      # [[ $ps != '~' ]] && ps="${ps%/*}/$d"
     }
 
     unset d
@@ -99,56 +69,22 @@ prompt_generator() {
   # execution time was 69ms, the prompt would look
   # something like this: 
   # 069 ~/c/t >
-
-  if [[ "$1" -eq 0 ]]; then
-    ec="${C_GREEN}$1"
-  else
-    ec="${C_RED}$1"
-  fi
-
-
-  PS1="${tc}${ms}${C_DEFAULT} ${ps} ${ec} ${C_BLUE}>${C_DEFAULT} " 
+  PS1="${tc}${ms}${C_DEFAULT} ${ps} ${C_BLUE}>${C_DEFAULT} " 
 
   unset _t_prompt
-
 }
 
-
-echo setting prompt command
-PROMPT_COMMAND="prompt_generator $?"
-
-
-prompt_timestamp() { date +%s%N ; }
+prompt_timestamp() { date +%s%N ;}
 
 # DEBUG trap will get executed before a command
-timetrap() {
-	: "${_t_prompt:=$(prompt_timestamp)}"
-}
-
-exittrap() {
-	EXT="$?"
-	echo $EXT
-}
-
-prehook() { exittrap; timetrap; }
-
-trap prehook DEBUG
+trap ': "${_t_prompt:=$(prompt_timestamp)}"' DEBUG
 
 # the PROMPT_COMMAND (prompt_generator) is
 # executed before a new prompt is to be printed.
 # By comparing the last timestamp set with the
 # DEBUG trap we get a good approximation of the
 # execution time of the last command.
-
-
-
-#PROMPT_COMMAND="\$(VALU="\$?" ;\
-# if [ \$VALU == 0 ];\
-#   then echo \${prompt_generator}\$(tput setaf 2)>\$(tput sgr0);\
-# else echo \${prompt_generator}\$(tput setaf 1)>\$(tput sgr0);\
-# fi)"
-	
-
+PROMPT_COMMAND=prompt_generator
 
 # ----
 
@@ -169,25 +105,25 @@ trap prehook DEBUG
 
 # fastest, but a bit inconvenient:
 
-: C_DEFAULT="\[\033[m\]"
-: C_RED="\[\033[31m\]"
-: C_GREEN="\[\033[32m\]"
-: C_YELLOW="\[\033[33m\]"
-: C_BLUE="\[\033[34m\]"
-: C_MAGENTA="\[\033[35m\]"
-: C_CYAN="\[\033[36m\]"
+# C_DEFAULT="\[\033[m\]"
+# C_RED="\[\033[31m\]"
+# C_GREEN="\[\033[32m\]"
+# C_YELLOW="\[\033[33m\]"
+# C_BLUE="\[\033[34m\]"
+# C_MAGENTA="\[\033[35m\]"
+# C_CYAN="\[\033[36m\]"
 
 # this is the best way to set the color variables,
 # since it sets the variables only when they are
 # undefined:
 
-# "${C_RED:=\[$(tput setaf 1)\]}" 
-# "${C_GREEN:=\[$(tput setaf 2)\]}" 
-# "${C_YELLOW:=\[$(tput setaf 3)\]}" 
-# "${C_BLUE:=\[$(tput setaf 4)\]}" 
-# "${C_MAGENTA:=\[$(tput setaf 5)\]}" 
-# "${C_CYAN:=\[$(tput setaf 6)\]}" 
-# "${C_DEFAULT:=\[$(tput sgr0)\]}"
+: "${C_RED:=\[$(tput setaf 1)\]}" 
+: "${C_GREEN:=\[$(tput setaf 2)\]}" 
+: "${C_YELLOW:=\[$(tput setaf 3)\]}" 
+: "${C_BLUE:=\[$(tput setaf 4)\]}" 
+: "${C_MAGENTA:=\[$(tput setaf 5)\]}" 
+: "${C_CYAN:=\[$(tput setaf 6)\]}" 
+: "${C_DEFAULT:=\[$(tput sgr0)\]}"
 
 # code below is actually slower then
 # hardcoded direct declarations
@@ -198,4 +134,4 @@ trap prehook DEBUG
 # : "${C_YELLOW:=\[\033[33m\]}"
 # : "${C_BLUE:=\[\033[34m\]}"
 # : "${C_MAGENTA:=\[\033[35m\]}"
-# : "${C_CYAN:=\[\033[36m\]}""]}"
+# : "${C_CYAN:=\[\033[36m\]}"

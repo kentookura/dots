@@ -1,6 +1,8 @@
 mkcd() { mkdir -p "$1" 	  && cd "$1" ; }
 mvcd() { mv -iv "$1" "$2" && cd "$1" ; }
 cpcd() { mv -iv "$1" "$2" && cd "$1" ; }
+fv(){ vim $(fzf -e) ; }
+qb(){ ~/.src/qutebrowser/.venv/bin/python3 -m qutebrowser -C ~/.config/qutebrowser/config.py ; }
 
 c() {
 	if [ -z "$1" ] ; then

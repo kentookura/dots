@@ -1,8 +1,0 @@
-set -o vi
-set -o trackall
-set -o bgnice
-
-. ~/.config/shell/prompt.shellrc
-. ~/.config/shell/aliases.shellrc
-. ~/.config/shell/functions.shellrc
-. ~/.config/shell/prompt.shellrc

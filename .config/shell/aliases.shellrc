@@ -1,5 +1,5 @@
-alias {config,cnf}='/usr/local/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
-alias v='vim'
+alias {config,cnf}='/bin/git --git-dir=$HOME/dots --work-tree=$HOME'
+alias {v,vim}='nvim'
 alias bm='. ~/bin/bm'
 
 alias source='. ~/.config/shell/main.shellrc && . ~/.profile'
@@ -14,10 +14,12 @@ alias pretty="python3 -m json.tool"
 
 alias cfv='vim ~/.vimrc'
 alias cfh='vim ~/.config/sxhkd/sxhkdrc'
-alias cfr='vim ~/.config/ranger'
-alias cfm='cd ~/.xmonad/src; vim ~/.xmonad/xmonad.hs'
+alias cfr='vim ~/.config/ranger/rc.conf'
+alias cfm='cd ~/.xmonad/; vim ~/.xmonad/xmonad.hs'
+alias cfq='vim ~/.config/qutebrowser/config.py'
 alias fs='vim ~/.config/shell/functions.shellrc'
 alias als='vim ~/.config/shell/aliases.shellrc'
+alias prp='vim ~/.config/shell/prompt.shellrc'
 alias profile='vim ~/.profile'
 
 alias wiki='vim ~/wiki/index.md'
