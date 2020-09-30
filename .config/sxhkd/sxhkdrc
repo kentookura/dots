@@ -1,21 +1,27 @@
-super + Return 
-	st -f "DejaVu Sans Mono"
+#super + Return 
+	alacritty
 
-super + d
-	dmenu_run
+shift + F5
+	sctd -d
 
-super + w
-	brows luakit
-
-super + shift + w
-	brows surf
-
-super + r
-	st -e ranger
-
-#super + o
-	#sg
-
+shift + F6
+	sctd -i
+#
+#super + d
+#	dmenu_run
+#
+#super + w
+#	qutebrowser
+#
+#super + shift + w
+#	brows surf
+#
+#super + r
+#	alacritty -e lf
+#
+##super + o
+#	#sg
+#
 super + Escape
 	pkill -USR1 -x sxhkd
 
@@ -24,41 +30,41 @@ super + Escape
 #	|  _  ||  |  |  |        |
 #	|_____||________|__|__|__|
 
-super + shift + c
-	dwmc killclient
-
-super + q
-	pkill dwm
-
-super + shift + q
-	dwmc quit
-
-super + {j, k}
-	dwmc focusstack {+, -}1
-
-super + shift + {j, k}
-	dwmc movestack {+, -}1
-
-super + {l, h}
-	dwmc setmfact {+, -}0.05
-
-super + {i, u}
-	dwmc setcfact {+, -}0.25
-
-super + shift + {h, l}
-	dwmc incnmaster {+, -}1
-
-super + shift + Return
-	dwmc zoom
-
-super + shift + space
-	dwmc togglefloating
-
-super + b
-	dwmc togglebar
-
-super + 0
-	dwmc viewall
-
-super + {t, space, f, z, x, c, v}
-	dwmc setlayoutex {0, 1, 2, 3, 4, 5, 6}
+#super + shift + c
+#	dwmc killclient
+#
+#super + q
+#	pkill dwm
+#
+#super + shift + q
+#	dwmc quit
+#
+#super + {j, k}
+#	dwmc focusstack {+, -}1
+#
+#super + shift + {j, k}
+#	dwmc movestack {+, -}1
+#
+#super + {l, h}
+#	dwmc setmfact {+, -}0.05
+#
+#super + {i, u}
+#	dwmc setcfact {+, -}0.25
+#
+#super + shift + {h, l}
+#	dwmc incnmaster {+, -}1
+#
+#super + shift + Return
+#	dwmc zoom
+#
+#super + shift + space
+#	dwmc togglefloating
+#
+#super + b
+#	dwmc togglebar
+#
+#super + 0
+#	dwmc viewall
+#
+#super + {t, space, f, z, x, c, v}
+#	dwmc setlayoutex {0, 1, 2, 3, 4, 5, 6}
