@@ -39,10 +39,6 @@
 .vim/
 .viminfo
 .xmonad/*
-.xmonad/xmonad-x86_64-openbsd
-.xmonad/xmonad.hi
-.xmonad/xmonad.o
-.xmonad/xmonad/
 .xsession-errors
 bin/
 dl/
