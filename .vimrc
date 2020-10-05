@@ -98,12 +98,14 @@ autocmd BufNewFile,BufRead *.rc set syntax=sh
 autocmd BufNewFile,BufRead *.shellrc set syntax=sh
 autocmd BufNewFile,BufRead .xinitrc set syntax=sh
 autocmd BufNewFile,BufRead .xmobarrc set syntax=haskell
+autocmd BufRead xmonad.hs set foldmethod=marker
 autocmd BufNewFile,BufRead *.md set tabstop=4
 
 hi CocErrorSign ctermfg=0
 hi Pmenu ctermbg=3
 
 call plug#begin('~/.vim/plugged')
+
 "-------------------------------vim--------------------------------------
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
@@ -115,12 +117,15 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'morhetz/gruvbox'
 Plug 'chrisbra/Colorizer'
 Plug 'rhysd/vim-healthcheck'
+
 "------------------------------writing----------------------------------
 Plug 'geratheon/vim-translate'
 Plug 'junegunn/goyo.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'rhysd/vim-grammarous'
+Plug 'mattn/emmet-vim'
+
 "--------------------------------git------------------------------------
 Plug 'tpope/vim-fugitive'
 
