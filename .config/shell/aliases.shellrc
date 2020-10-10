@@ -1,7 +1,10 @@
 alias {config,cnf}='/bin/git --git-dir=$HOME/dots --work-tree=$HOME'
 alias {v,vim}='nvim'
+alias p='sudo pacman'
+alias ss='sudo systemctl'
 alias bm='. ~/bin/bm'
 alias site='cd ~/site/src/'
+
 
 alias source='. ~/.config/shell/main.shellrc && . ~/.profile'
 alias ..='cd ..'

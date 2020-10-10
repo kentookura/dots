@@ -35,7 +35,7 @@ set path+=**
 set so=30
 set splitbelow
 set splitright
-set wildignore+=*.opus,*.flac,*.pdf,*.jpg,*.png,*.so,*.swp,*.zip,*.gzip,*.bz2,*.tar,*.xz,*.lrzip,*.lrz,*.mp3,*.ogg,*.mp4,*.gif,*.jpeg,*.webm
+set wildignore+=*.opus,*.flac,*.pdf,*.jpg,*.png,*.so,*.swp,*.zip,*.gzip,*.bz2,*.tar,*.xz,*.lrzip,*.lrz,*.mp3,*.ogg,*.mp4,*.gif,*.jpeg,*.webm,*.hi,*.o
 set wildmenu
 
 " open help vertically
@@ -97,7 +97,7 @@ autocmd BufNewFile,BufRead *.cfg set syntax=sh
 autocmd BufNewFile,BufRead *.rc set syntax=sh
 autocmd BufNewFile,BufRead *.shellrc set syntax=sh
 autocmd BufNewFile,BufRead .xinitrc set syntax=sh
-autocmd BufNewFile,BufRead .xmobarrc set syntax=haskell
+autocmd BufNewFile,BufRead xmobar* set syntax=haskell
 autocmd BufRead xmonad.hs set foldmethod=marker
 autocmd BufNewFile,BufRead *.md set tabstop=4
 
@@ -114,7 +114,7 @@ Plug 'junegunn/fzf', { 'do': {->fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'stsewd/fzf-checkout.vim'
-Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'chrisbra/Colorizer'
 Plug 'rhysd/vim-healthcheck'
 

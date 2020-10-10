@@ -3,6 +3,7 @@
 c.url.searchengines = { 
          "DEFAULT": "https://duckduckgo.com/?q={}",
          "r": "https://reddit.com/r/{}",
+         "aw": "https://wiki.archwiki.org/index.php/{}",
          "y": "https://youtube.com/results?search_query={}" }
 
 c.url.start_pages = ["file:///home/kento/tilde/index.html"]
@@ -45,6 +46,7 @@ base0C = "#8ec07c"
 base0D = "#83a598"
 base0E = "#d3869b"
 base0F = "#d65d0e"
+purple = "#8f3f71"
 c.colors.completion.fg = base05
 c.colors.completion.odd.bg = base00
 c.colors.completion.even.bg = base00
@@ -73,7 +75,7 @@ c.colors.downloads.stop.fg = base00
 c.colors.downloads.stop.bg = base0C
 c.colors.downloads.error.fg = base08
 c.colors.hints.fg = base00
-c.colors.hints.bg = base0A
+c.colors.hints.bg = purple
 c.colors.hints.match.fg = base05
 c.colors.keyhint.fg = base05
 c.colors.keyhint.suffix.fg = base05

@@ -1,27 +1,18 @@
 #super + Return 
-	alacritty
+#  alacritty
+
+shift + F2
+  pamixer -d 5
+
+shift + F3
+  pamixer -i 5
 
 shift + F5
 	sctd -d
 
 shift + F6
 	sctd -i
-#
-#super + d
-#	dmenu_run
-#
-#super + w
-#	qutebrowser
-#
-#super + shift + w
-#	brows surf
-#
-#super + r
-#	alacritty -e lf
-#
-##super + o
-#	#sg
-#
+
 super + Escape
 	pkill -USR1 -x sxhkd
 
