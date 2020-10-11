@@ -3,4 +3,3 @@ set -o vi
 . ~/.config/shell/functions.shellrc
 
 PS1='$(prompt $?)'
-

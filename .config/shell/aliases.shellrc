@@ -17,9 +17,11 @@ alias ul="ultralist list"
 alias pretty="python3 -m json.tool"
 
 alias cfv='vim ~/.vimrc'
+alias cfa='vim ~/.config/alacritty.yml'
 alias cfh='vim ~/.config/sxhkd/sxhkdrc'
 alias cfr='vim ~/.config/ranger/rc.conf'
 alias cfm='cd ~/.xmonad/; vim ~/.xmonad/xmonad.hs'
+alias xm='cd ~/.xmonad'
 alias cfq='vim ~/.config/qutebrowser/config.py'
 alias fs='vim ~/.config/shell/functions.shellrc'
 alias als='vim ~/.config/shell/aliases.shellrc'

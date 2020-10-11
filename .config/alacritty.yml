@@ -22,8 +22,8 @@ scrolling:
 
 window:
   padding:
-    x: 5
-    y: 5
+    x: 20
+    y: 20
 
 background_opacity: 0.92
 
