@@ -75,6 +75,8 @@ map <Leader>s :SyntasticToggleMode<CR>
 "----------------------------------autocmds--------------------------------
 
 autocmd VimLeave *.tex !texclear %
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight
 
@@ -110,6 +112,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'do': {->fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
