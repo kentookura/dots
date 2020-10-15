@@ -76,6 +76,8 @@ map <Leader>s :SyntasticToggleMode<CR>
 
 autocmd VimLeave *.tex !texclear %
 autocmd VimEnter * NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 autocmd VimEnter * wincmd p
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight
