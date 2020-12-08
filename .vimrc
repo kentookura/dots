@@ -76,6 +76,7 @@ map <Leader>s :SyntasticToggleMode<CR>
 
 autocmd VimLeave *.tex !texclear %
 autocmd VimEnter * NERDTree
+autocmd BufEnter xmenu* setlocal noexpandtab tabstop=4
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 autocmd VimEnter * wincmd p
@@ -153,6 +154,17 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+      \ 'Modified'  : '*' ,
+      \ 'Staged'    : '+' ,
+      \ 'Untracked' : '!' ,
+      \ 'Renamed'   : '->',
+      \ 'Unmerged'  : '=' ,
+      \ 'Deleted'   : 'x' ,
+      \ 'Dirty'     : '<' ,
+      \ 'Clean'     : '>' ,
+      \ 'Unknown'   : '?'
+      \}
 
 let g:goyo_height = 100
 
