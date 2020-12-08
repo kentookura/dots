@@ -2,12 +2,13 @@
 #-------------------------------------------------------------------------------
 c.url.searchengines = { 
          "DEFAULT": "https://duckduckgo.com/?q={}",
-         "r": "https://reddit.com/r/{}",
-         "aw": "https://wiki.archwiki.org/index.php/{}",
-         "y": "https://youtube.com/results?search_query={}" }
-
-c.url.start_pages = ["file:///home/kento/tilde/index.html"]
-c.url.default_page = "file:///home/kento/tilde/index.html"
+         "r"      : "https://reddit.com/r/{}",
+         "g"      : "https://google.com/search?q={}",
+         "aw"     : "https://wiki.archlinux.org/index.php/{}",
+         "w"      : "https://en.wikipedia.org/wiki/{}",
+         "js"     : "https://jisho.org/search/{}",
+         "leo"    : "https://dict.leo.org/german-english/{}",
+         "y"      : "https://youtube.com/results?search_query={}" }
 
 # bindings
 #-------------------------------------------------------------------------------
